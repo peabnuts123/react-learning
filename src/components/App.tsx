@@ -34,7 +34,7 @@ export class App extends React.Component<IAppProperties, IAppState> {
     render() {
         return (
             <div>
-                <h1>Really Dangerous Projects <small>It's what you want</small></h1>
+                <h1>Project Dashboard <small><em>Manage ALL the projects!</em></small></h1>
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
