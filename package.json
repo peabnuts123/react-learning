@@ -30,10 +30,10 @@
   },
   "scripts": {
     "build-all": "npm run build-libraries && npm run build-application",
-    "build-libraries": "npm run build-clean && webpack -p --devtool source-map --config libraries.webpack.config.js",
-    "build-application": "webpack -p --devtool source-map --config application.webpack.config.js",
-    "build-application:live": "webpack -p --devtool source-map --config application.webpack.config.js --watch",
+    "build-libraries": "npm run build-clean && webpack --devtool source-map --config libraries.webpack.config.js",
+    "build-application": "webpack --devtool source-map --config application.webpack.config.js",
+    "build-application:live": "webpack --devtool source-map --config application.webpack.config.js --watch",
     "build-clean": "rimraf dist/ && rimraf build/",
-    "serve": "static-server dist/"
+    "serve": "static-server -p 13293 dist/"
   }
 }
