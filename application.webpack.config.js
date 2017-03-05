@@ -1,6 +1,7 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var libraries = require('./libraries').all;
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const libraries = require('./libraries').all;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -20,6 +21,13 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 loader: "ts-loader"
+            },
+            {
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'less-loader']
+                })
             }
         ]
     },
@@ -31,6 +39,7 @@ module.exports = {
     .concat([
         new HtmlWebpackPlugin({
             template: "src/index.html"
-        })
+        }),
+        new ExtractTextPlugin('content/site-bundle.css')
     ])
 }

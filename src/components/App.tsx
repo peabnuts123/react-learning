@@ -1,7 +1,8 @@
 /* tslint:disable: max-classes-per-file */
 import * as React from 'react';
-import { Page } from './Page';
-import { HomePage } from './pages/Home/Home';
+import { Page } from '../lib/Page';
+import { ProjectsPage } from './pages/Projects/Projects';
+import '../lib/site.less';
 
 // tslint:disable-next-line:no-empty-interface
 interface IAppProperties {
@@ -18,9 +19,9 @@ export class App extends React.Component<IAppProperties, IAppState> {
 
         this.state = {
             links: [
-                HomePage
+                ProjectsPage
             ],
-            currentPage: HomePage
+            currentPage: ProjectsPage
         };
 
         this.setPage = this.setPage.bind(this);
@@ -33,7 +34,7 @@ export class App extends React.Component<IAppProperties, IAppState> {
     render() {
         return (
             <div>
-                <h1>Really Dangerous Projects <small>That's what you want</small></h1>
+                <h1>Really Dangerous Projects <small>It's what you want</small></h1>
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
